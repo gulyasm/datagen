@@ -28,7 +28,6 @@ events = int(sys.argv[2])
 
 while True:
     l = generate(events)
-    print(events)
     with open(prefix + "/data_" + str(i), "w") as f:
         for event in l:
             f.write(event + "\n")
