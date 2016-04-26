@@ -11,13 +11,13 @@ COLORS = ["blue","magenta", "red", "yellow", "green", "cyan"]
 def generate(n):
     l = []
     ctime = int(round(time.time() * 1000))
-    for x in range(n):
+    for i in range(n):
         ctime = ctime + random.randrange(300)
         l.append(json.dumps({
             "color": random.choice(COLORS), 
             "timestamp": ctime, 
             "id": str(uuid.uuid4()), 
-            "value": gauss(35,30)
+            "value": int(random.random() > 0.50)
             }))
     return l
 
@@ -28,7 +28,6 @@ events = int(sys.argv[2])
 
 while True:
     l = generate(events)
-    print(events)
     with open(prefix + "/data_" + str(i), "w") as f:
         for event in l:
             f.write(event + "\n")
