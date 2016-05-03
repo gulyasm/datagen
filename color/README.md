@@ -1,5 +1,8 @@
 # Stream data generator
 
+## Scripts
+The default `generate.py` contains the color sensor data. The `generate_alert_enabled.sh` script contains the so called alert enabled (alertEnabled) data. It generates 1 or 0 as value attribute. Both scripts has the same parameters.
+
 ## Usage
 ### Paramters
 ```bash
